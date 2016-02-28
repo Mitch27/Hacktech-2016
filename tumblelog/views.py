@@ -7,7 +7,7 @@ from flask.ext.mongoengine.wtf import model_form
 class ListView(MethodView):
 
     def get(self):
-        posts = Post.objects.all()
+        posts = Post.objects.order_by('-timestamp')
         return render_template('base.html', posts=posts)
 
 

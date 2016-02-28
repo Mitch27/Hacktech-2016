@@ -1,3 +1,4 @@
+import datetime
 from tumblelog import db
 
 class Post(db.Document):
@@ -7,4 +8,6 @@ class Post(db.Document):
     location = db.StringField(max_length=100, required=True)
     hack_ideas = db.StringField(max_length=1000, required=True)
     experience = db.StringField(max_length=1000, required=True)
+    contact_info = db.StringField(max_length=1000, required=True)
+    timestamp = db.DateTimeField(default=datetime.datetime.now, required=True);
     meta = {'strict': False}

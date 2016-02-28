@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>Find a Team: Hacktech 3.0</title>
 <head>
   <meta charset="utf-8">
   <title>My Tumblelog</title>
@@ -20,52 +21,70 @@
   </nav>
 
   <div class="container">
-    <form class="form-horizontal" action="add-profile" method="post">
-      <div class="form-group">
-        <div class="col-md-6">
-          <input type="text" name="Name" class="form-control" placeholder="Name">
-        </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <button id="add-profile-btn" type="button" class="btn btn-link center-block">
+          <span class="text-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Profile</span>
+        </button>
       </div>
-      <div class="form-group">
-        <div class="col-md-2">
-          <input type="number" name="Age" class="form-control" placeholder="Age">
+    </div>
+
+    <div id="add-profile-form" hidden>
+      <form class="form-horizontal" action="add-profile" method="post">
+        <div class="form-group">
+          <div class="col-md-6">
+            <input type="text" name="Name" class="form-control" placeholder="Name">
+          </div>
         </div>
-        <div class="col-md-5">
-          <input type="text" name="School" class="form-control" placeholder="School">
+        <div class="form-group">
+          <div class="col-md-2">
+            <input type="number" name="Age" class="form-control" placeholder="Age">
+          </div>
+          <div class="col-md-5">
+            <input type="text" name="School" class="form-control" placeholder="School">
+          </div>
+          <div class="col-md-5">
+            <input type="text" name="Location" class="form-control" placeholder="Location">
+          </div>
         </div>
-        <div class="col-md-5">
-          <input type="text" name="Location" class="form-control" placeholder="Location">
+        <div class="form-group">
+          <div class="col-xs-12">
+            <textarea name="Hack-ideas" class="form-control" rows="2" placeholder="Hack ideas"></textarea>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
+        <div class="form-group">
+          <div class="col-xs-12">
+            <textarea name="Experience" class="form-control" rows="2" placeholder="Experience"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <textarea name="Contact-info" class="form-control" rows="2" placeholder="Contact info"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input type="submit" class="btn btn-success pull-right" value="Add Profile">
+          </div>
+        </div>
+      </form>
+      <div id="close-profile-btn" class="row">
         <div class="col-xs-12">
-          <textarea name="Hack-ideas" class="form-control" rows="2" placeholder="Hack ideas"></textarea>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-12">
-          <textarea name="Experience" class="form-control" rows="2" placeholder="Experience"></textarea>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-12">
-          <textarea name="Contact-info" class="form-control" rows="2" placeholder="Contact info"></textarea>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-12">
-          <input type="submit" class="btn btn-success pull-right" value="Add Profile">
+          <button type="button" class="btn btn-link center-block">
+            <span class="text-success"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Close</span>
+          </button>
         </div>
       </div>
       <hr />
-    </form>
+    </div>
 
     {% block content %}
     {% for post in posts %}
     <div class="panel panel-info">
       <div class="panel-body">
         <h3>{{ post.name }}</h3>
-        <p>{{ post.age }} | {{ post.school }} @ {{ post.location }}</p>
+        <p>{{ post.age }} <strong>|</strong> {{ post.school }} <strong>@</strong> {{ post.location }}</p>
         <p><strong>Hack ideas: </strong>{{ post.hack_ideas }}</p>
         <p><strong>Experience: </strong>{{ post.experience }}</p>
         <p><strong>Contact info: </strong>{{ post.contact_info }}</p>

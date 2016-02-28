@@ -1,5 +1,38 @@
 {% extends "base.html" %}
 
+<form>
+    <fieldset class="form-inline">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Mitch Lin">
+            </fieldset>
+    <fieldset class="form-inline">
+        <label for="age">Age</label>
+        <input type="value" class="form-control" id="age" placeholder="18">
+            </fieldset>
+    <fieldset class="form-inline">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="mitchlin@berkeley.edu">
+            </fieldset>
+    <fieldset class="form-inline">
+        <label for="school">School</label>
+        <input type="text" class="school" id="school" placeholder="UC Berkeley">
+            </fieldset>
+    <fieldset class="form-inline">
+        <label for="location">Location</label>
+        <input type="text" class="form-control" id="location" placeholder="Berkeley, CA">
+            </fieldset>
+    <fieldset class="form-inline">
+        <label for="experience">Experience</label>
+        <input type="text" class="form-control" id="experience" placeholder="Java/Android API">
+            </fieldset>
+    <fieldset class="form-inline">
+        <label for="hackIdeas">Hack Ideas</label>
+        <input type="text" class="form-control" id="hackIdeas" placeholder="Multiplayer touch game">
+            </fieldset>
+    <button type="submit" class="btn btn-primary">Send invitation</button>
+</form>
+
+
 {% block content %}
     {% for post in posts %}
       <h2><a href="{{ url_for('posts.detail', slug=post.slug) }}">{{ post.title }}</a></h2>

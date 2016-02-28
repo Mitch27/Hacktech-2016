@@ -19,7 +19,10 @@ def addProfile():
 	post = Post(
 		name = request.form['Name'],
 		age = request.form['Age'],
-		school = request.form['School']
+		school = request.form['School'],
+        location = request.form['Location'],
+        hack_ideas = request.form['Hack-ideas'],
+		experience = request.form['Experience']
 	)
 	post.save()
 	posts = Post.objects.all()
